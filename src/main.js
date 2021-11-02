@@ -3,6 +3,7 @@ const { createCanvas, loadImage } = require("canvas");
 const console = require("console");
 const { layersOrder, format, rarity } = require("./config.js");
 
+// Ele recebe a largura e altura do config.js
 const canvas = createCanvas(format.width, format.height);
 const ctx = canvas.getContext("2d");
 
@@ -21,7 +22,7 @@ let hash = [];
 let decodedHash = [];
 const Exists = new Map();
 
-
+// Adicionar Raridade
 const addRarity = _str => {
   let itemRarity;
 
@@ -34,6 +35,7 @@ const addRarity = _str => {
   return itemRarity;
 };
 
+// Limpar o Nome (r.key => "")
 const cleanName = _str => {
   let name = _str.slice(0, -4);
   rarity.forEach((r) => {
@@ -42,6 +44,7 @@ const cleanName = _str => {
   return name;
 };
 
+// Retorna o ID | NOME | NOME DO ARQUIVO | RARIDADE
 const getElements = path => {
   return fs
     .readdirSync(path)
@@ -56,6 +59,7 @@ const getElements = path => {
     });
 };
 
+// Preparação das Camadas
 const layersSetup = layersOrder => {
   const layers = layersOrder.map((layerObj, index) => ({
     id: index,
@@ -77,10 +81,12 @@ const buildSetup = () => {
   fs.mkdirSync(buildDir);
 };
 
+// Salvar Camada Feita
 const saveLayer = (_canvas, _edition) => {
   fs.writeFileSync(`${buildDir}/${_edition}.png`, _canvas.toBuffer("image/png"));
 };
 
+// Metadata?
 const addMetadata = _edition => {
   let dateTime = Date.now();
   let tempMetadata = {
@@ -128,6 +134,7 @@ const drawLayer = async (_layer, _edition) => {
   }
 };
 
+// Criação dos Arquivos
 const createFiles = async edition => {
   const layers = layersSetup(layersOrder);
 
@@ -155,6 +162,7 @@ const createFiles = async edition => {
  }
 };
 
+// Criação do Metadata
 const createMetaData = () => {
   fs.stat(`${buildDir}/${metDataFile}`, (err) => {
     if(err == null || err.code === 'ENOENT') {

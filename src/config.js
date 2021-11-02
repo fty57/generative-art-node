@@ -1,3 +1,4 @@
+// Ordem das Camadas
 const layersOrder = [
     { name: 'background', number: 1 },
     { name: 'ball', number: 2 },
@@ -9,11 +10,13 @@ const layersOrder = [
     { name: 'top lid', number: 3 },
 ];
   
+// Formato da Imagem
 const format = {
     width: 230,
     height: 230
 };
 
+// Raridade
 const rarity = [
     { key: "", val: "original" },
     { key: "_r", val: "rare" },
