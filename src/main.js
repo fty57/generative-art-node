@@ -9,7 +9,7 @@ const ctx = canvas.getContext("2d");
 if (!process.env.PWD) {
   process.env.PWD = process.cwd();
 }
-// Posso comentar?
+
 
 const buildDir = `${process.env.PWD}/build`;
 const metDataFile = '_metadata.json';
