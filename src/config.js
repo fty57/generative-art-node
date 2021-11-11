@@ -1,11 +1,11 @@
 // Ordem das Camadas
 const layersOrder = [    
-    { name: '7-background', number: 5 },
+    { name: '7-background', number: 4 },
     { name: '6-body', number: 5 },
     { name: '5-base-bird', number: 1 },
     { name: '4-beak', number: 5 },
     { name: '3-eye', number: 4 },
-    { name: '2-hat', number: 4 },
+    { name: '2-hat', number: 5 },
     { name: '1-acessory', number: 5 },
 ];
   
@@ -22,6 +22,6 @@ const rarity = [
     { key: "_sr", val: "super rare" },
 ];
 
-const defaultEdition = 10000;
+const defaultEdition = 90;
 
 module.exports = { layersOrder, format, rarity, defaultEdition };
