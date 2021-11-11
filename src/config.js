@@ -1,19 +1,18 @@
 // Ordem das Camadas
-const layersOrder = [
-    { name: 'background', number: 1 },
-    { name: 'ball', number: 2 },
-    { name: 'eye color', number: 12 },
-    { name: 'iris', number: 3 },
-    { name: 'shine', number: 1 },
-    { name: 'shine', number: 1 },
-    { name: 'bottom lid', number: 3 },
-    { name: 'top lid', number: 3 },
+const layersOrder = [    
+    { name: '7-background', number: 5 },
+    { name: '6-body', number: 5 },
+    { name: '5-base-bird', number: 1 },
+    { name: '4-beak', number: 5 },
+    { name: '3-eye', number: 4 },
+    { name: '2-hat', number: 4 },
+    { name: '1-acessory', number: 5 },
 ];
   
 // Formato da Imagem
 const format = {
-    width: 230,
-    height: 230
+    width: 1024,
+    height: 1024
 };
 
 // Raridade
@@ -23,6 +22,6 @@ const rarity = [
     { key: "_sr", val: "super rare" },
 ];
 
-const defaultEdition = 5;
+const defaultEdition = 10000;
 
 module.exports = { layersOrder, format, rarity, defaultEdition };
